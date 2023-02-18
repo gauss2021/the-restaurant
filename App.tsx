@@ -28,6 +28,7 @@ import {
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Login from './screens/Login';
+import {COLOR, TEXT} from './config';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -39,7 +40,21 @@ function App(): JSX.Element {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Login} />
+        <Stack.Screen
+          name="Se connecter"
+          options={{
+            headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: COLOR.primary,
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'normal',
+              fontSize: TEXT.subtitle,
+            },
+          }}
+          component={Login}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

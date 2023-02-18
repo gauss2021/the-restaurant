@@ -10,7 +10,7 @@ import LineComponent from '../components/Line';
 import Visibility from '../components/Visibility';
 import {COLOR, TEXT} from '../config';
 
-function Login(): JSX.Element {
+function Register(): JSX.Element {
   const [visible, setVisible] = useState(false);
   return (
     <View style={{backgroundColor: COLOR.primary, height: '100%'}}>
@@ -29,7 +29,7 @@ function Login(): JSX.Element {
           padding: 20,
         }}>
         <Text style={{fontSize: TEXT.title, fontWeight: 'bold', color: '#333'}}>
-          Bienvenue
+          S'enregistrer
         </Text>
         <Text
           style={{
@@ -37,7 +37,7 @@ function Login(): JSX.Element {
             fontWeight: 'normal',
             marginVertical: 15,
           }}>
-          Veuillez entrer vos indentifiants
+          Veuillez remplir tous ces champs
         </Text>
         <View
           style={{
@@ -127,4 +127,4 @@ function Login(): JSX.Element {
   );
 }
 
-export default Login;
+export default Register;
