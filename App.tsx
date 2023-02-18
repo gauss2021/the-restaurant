@@ -29,6 +29,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Login from './screens/Login';
 import {COLOR, TEXT} from './config';
+import Register from './screens/Register';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -39,7 +40,7 @@ const Stack = createNativeStackNavigator();
 function App(): JSX.Element {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="S'enregistrer">
         <Stack.Screen
           name="Se connecter"
           options={{
@@ -54,6 +55,21 @@ function App(): JSX.Element {
             },
           }}
           component={Login}
+        />
+        <Stack.Screen
+          name="S'enregistrer"
+          options={{
+            headerTitleAlign: 'center',
+            headerStyle: {
+              backgroundColor: COLOR.primary,
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'normal',
+              fontSize: TEXT.subtitle,
+            },
+          }}
+          component={Register}
         />
       </Stack.Navigator>
     </NavigationContainer>
