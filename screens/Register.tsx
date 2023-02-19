@@ -142,6 +142,7 @@ function Register(): JSX.Element {
             <ConditionUtilisation />
           </View>
           <ButtonComponent
+            bordercolor="gray"
             elevation={10}
             text="S'enregistrer"
             backgroundcolor={COLOR.primary}

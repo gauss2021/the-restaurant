@@ -10,7 +10,7 @@ import LineComponent from '../components/Line';
 import Visibility from '../components/Visibility';
 import {COLOR, TEXT} from '../config';
 
-function Login({navigation}: {navigation: any}): JSX.Element {
+function ForgetPassword({navigation}: {navigation: any}): JSX.Element {
   const [visible, setVisible] = useState(false);
   return (
     <View style={{backgroundColor: COLOR.primary, height: '100%'}}>
@@ -29,7 +29,7 @@ function Login({navigation}: {navigation: any}): JSX.Element {
           padding: 20,
         }}>
         <Text style={{fontSize: TEXT.title, fontWeight: 'bold', color: '#333'}}>
-          Bienvenue
+          Mot de passe oublie?
         </Text>
         <Text
           style={{
@@ -37,7 +37,8 @@ function Login({navigation}: {navigation: any}): JSX.Element {
             fontWeight: 'normal',
             marginVertical: 15,
           }}>
-          Veuillez entrer vos indentifiants
+          Veuillez entrer vote adresse email afin de pouvoir restaurer votre mot
+          de passe
         </Text>
         <View
           style={{
@@ -55,79 +56,23 @@ function Login({navigation}: {navigation: any}): JSX.Element {
           </View>
           <TextInput style={{flex: 1}} placeholder="email" />
         </View>
-        <View
-          style={{
-            backgroundColor: '#d8dee9',
-            width: '100%',
-            borderRadius: 15,
-            display: 'flex',
-            flexDirection: 'row',
-            marginVertical: 15,
-            alignItems: 'center',
-            paddingHorizontal: 15,
-            justifyContent: 'space-between',
-          }}>
-          <View
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              flex: 1,
-            }}>
-            <View style={{marginRight: 10}}>
-              <KeyIcon />
-            </View>
-            <TextInput secureTextEntry={!visible} placeholder="mot de passe" />
-          </View>
-          <Pressable
-            style={{width: 24}}
-            onPress={() => {
-              setVisible(!visible);
-            }}>
-            <Visibility visibility={visible} />
-          </Pressable>
-        </View>
         <View style={{marginVertical: 15}}>
           <ButtonComponent
             elevation={10}
-            text="Se connecter"
+            text="Envoyer le lien"
             backgroundcolor={COLOR.primary}
             textcolor="#fff"
             onpress={() => {}}
             width="100%"
           />
         </View>
-        <Pressable
-          onPress={() => {
-            navigation.navigate('mot de passe oublie');
-          }}>
-          <Text style={{textAlign: 'center', color: COLOR.secondary}}>
-            Mot de passe oublie?
-          </Text>
-        </Pressable>
-        <View style={{marginVertical: 15}}>
-          <LineComponent />
-        </View>
-        <ButtonComponent
-          elevation={0}
-          text="Creer un compte"
-          backgroundcolor="#fff"
-          width="100%"
-          textcolor="gray"
-          onpress={() => {}}
-        />
-        <View>
-          <GoogleButton
-            width="100%"
-            backgroundcolor="#fff"
-            text="Se connecter avec google"
-            textcolor="gray"
-            onpress={() => {}}
-          />
-        </View>
+        <Text
+          style={{textAlign: 'center', color: COLOR.secondary, marginTop: 15}}>
+          Je ne peux pas récupérer mon compte en utilisant cette page
+        </Text>
       </View>
     </View>
   );
 }
 
-export default Login;
+export default ForgetPassword;

@@ -10,6 +10,7 @@ const ButtonComponent = ({
   onpress,
   width,
   elevation,
+  bordercolor,
 }: {
   backgroundcolor: string;
   text: string;
@@ -17,6 +18,7 @@ const ButtonComponent = ({
   onpress: Function;
   width: string;
   elevation: number;
+  bordercolor: string;
 }) => {
   return (
     <Pressable
@@ -28,7 +30,7 @@ const ButtonComponent = ({
           padding: 15,
           backgroundColor: backgroundcolor,
           borderWidth: 1,
-          borderColor: 'gray',
+          borderColor: bordercolor,
           borderRadius: 25,
           width: width,
           elevation: elevation,
