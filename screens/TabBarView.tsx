@@ -7,7 +7,10 @@ import StoreIcon from '../components/StoreIcon';
 import UserIcon from '../components/UserIcon';
 import {COLOR} from '../config';
 import Login from './Login';
+import SearchPage from './SearchPage';
 import Store from './Store';
+import {View} from 'react-native';
+import PanierIcon from '../components/PanierIcon';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,16 +35,34 @@ const MyTabs = () => {
         name="store"
         component={Store}
         options={{
+          headerLeftContainerStyle: {padding: 15},
+          headerRightContainerStyle: {padding: 15},
           headerShadowVisible: false,
           headerTitleAlign: 'center',
           headerTitleStyle: {
             display: 'none',
           },
           headerLeft() {
-            return <ProfilImage />;
+            return (
+              <View>
+                <ProfilImage />
+              </View>
+            );
           },
           headerRight(props) {
-            return <NotificationIcon />;
+            return (
+              <View
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                }}>
+                <View style={{marginRight: 10}}>
+                  <NotificationIcon />
+                </View>
+                <PanierIcon />
+              </View>
+            );
           },
           tabBarIcon: ({focused}) => {
             return <StoreIcon />;
@@ -50,7 +71,7 @@ const MyTabs = () => {
       />
       <Tab.Screen
         name="recherche"
-        component={Login}
+        component={SearchPage}
         options={{
           tabBarIcon: ({focused}) => {
             return <SearchIcon />;

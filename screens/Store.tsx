@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {View, Text, TextInput, Pressable, ScrollView} from 'react-native';
 import {Line} from 'react-native-svg';
+import AddIcon from '../components/addIcon';
 import BoxCategory from '../components/BoxCategory';
 import BoxLivraison from '../components/BoxLivraison';
 import ButtonComponent from '../components/ButtonComponent';
@@ -10,6 +11,8 @@ import DinnerIcon from '../components/DinnerIcon';
 import EmailIcon from '../components/EmailIcon';
 import ExploreIcon from '../components/ExploreIcon';
 import GoogleButton from '../components/GoogleButton';
+import ItemCategory from '../components/ItemCategory';
+import ItemProduct from '../components/itemsProduct';
 import KeyIcon from '../components/KeyIcon';
 import LineComponent from '../components/Line';
 import MenuIcon from '../components/MenuIcon';
@@ -18,6 +21,7 @@ import Visibility from '../components/Visibility';
 import {COLOR, TEXT} from '../config';
 
 function Store(): JSX.Element {
+  const [activeCategory, steActiveCategory] = useState(false);
   return (
     <ScrollView style={{padding: 15}}>
       <View style={{display: 'flex', flexDirection: 'row'}}>
@@ -83,6 +87,78 @@ function Store(): JSX.Element {
         <Pressable onPress={() => {}}>
           <Text style={{color: COLOR.secondary}}>Tous voir</Text>
         </Pressable>
+      </View>
+      <ScrollView horizontal={true} style={{marginVertical: 15}}>
+        <ItemCategory
+          onpress={() => {}}
+          activeCategory={!activeCategory}
+          text="Riz"
+        />
+        <ItemCategory
+          onpress={() => {}}
+          activeCategory={activeCategory}
+          text="Burger"
+        />
+        <ItemCategory
+          onpress={() => {}}
+          activeCategory={activeCategory}
+          text="Bierre"
+        />
+        <ItemCategory
+          onpress={() => {}}
+          activeCategory={activeCategory}
+          text="Jus"
+        />
+        <ItemCategory
+          onpress={() => {}}
+          activeCategory={activeCategory}
+          text="Eau"
+        />
+        <ItemCategory
+          onpress={() => {}}
+          activeCategory={activeCategory}
+          text="Poulet"
+        />
+        <ItemCategory
+          onpress={() => {}}
+          activeCategory={activeCategory}
+          text="Pizza"
+        />
+        <ItemCategory
+          onpress={() => {}}
+          activeCategory={activeCategory}
+          text="Gateaux"
+        />
+        <ItemCategory
+          onpress={() => {}}
+          activeCategory={activeCategory}
+          text="Pain"
+        />
+        <ItemCategory
+          onpress={() => {}}
+          activeCategory={activeCategory}
+          text="Fruits"
+        />
+      </ScrollView>
+      <View
+        style={{
+          marginTop: 5,
+          display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          gap: 15,
+          paddingBottom: 25,
+        }}>
+        <ItemProduct nom="burger" prix={500} />
+        <ItemProduct nom="burger" prix={500} />
+        <ItemProduct nom="burger" prix={500} />
+        <ItemProduct nom="burger" prix={500} />
+        <ItemProduct nom="burger" prix={500} />
+        <ItemProduct nom="burger" prix={500} />
+        <ItemProduct nom="burger" prix={500} />
+        <ItemProduct nom="burger" prix={500} />
+        <ItemProduct nom="burger" prix={500} />
+        <ItemProduct nom="burger" prix={500} />
       </View>
     </ScrollView>
   );
