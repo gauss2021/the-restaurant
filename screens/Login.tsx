@@ -16,7 +16,7 @@ function Login({navigation}: {navigation: any}): JSX.Element {
     <View style={{backgroundColor: COLOR.primary, height: '100%'}}>
       <View
         style={{
-          height: 40,
+          height: 20,
           width: '100%',
           backgroundColor: COLOR.primary,
         }}></View>
@@ -89,6 +89,7 @@ function Login({navigation}: {navigation: any}): JSX.Element {
         </View>
         <View style={{marginVertical: 15}}>
           <ButtonComponent
+            bordercolor="gray"
             elevation={10}
             text="Se connecter"
             backgroundcolor={COLOR.primary}
@@ -109,6 +110,7 @@ function Login({navigation}: {navigation: any}): JSX.Element {
           <LineComponent />
         </View>
         <ButtonComponent
+          bordercolor="gray"
           elevation={0}
           text="Creer un compte"
           backgroundcolor="#fff"

@@ -16,7 +16,7 @@ function ForgetPassword({navigation}: {navigation: any}): JSX.Element {
     <View style={{backgroundColor: COLOR.primary, height: '100%'}}>
       <View
         style={{
-          height: 40,
+          height: 20,
           width: '100%',
           backgroundColor: COLOR.primary,
         }}></View>
@@ -58,6 +58,7 @@ function ForgetPassword({navigation}: {navigation: any}): JSX.Element {
         </View>
         <View style={{marginVertical: 15}}>
           <ButtonComponent
+            bordercolor="gray"
             elevation={10}
             text="Envoyer le lien"
             backgroundcolor={COLOR.primary}

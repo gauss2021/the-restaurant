@@ -35,6 +35,8 @@ import Visibility from './components/Visibility';
 import CloseIcon from './components/CloseIcon';
 import RegisterPhone from './screens/RegisterPhone';
 import NotificationPage from './screens/NotificationPage';
+import MyTabs from './screens/TabBarView';
+import ProfilImage from './components/ProfilImage';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -45,10 +47,11 @@ const Stack = createNativeStackNavigator();
 function App(): JSX.Element {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="notificationpage">
+      <Stack.Navigator initialRouteName="mytabs">
         <Stack.Screen
           name="Se connecter"
           options={{
+            headerShadowVisible: false,
             headerTitleAlign: 'center',
             headerStyle: {
               backgroundColor: COLOR.primary,
@@ -64,6 +67,7 @@ function App(): JSX.Element {
         <Stack.Screen
           name="S'enregistrer"
           options={{
+            headerShadowVisible: false,
             headerTitleAlign: 'center',
             headerStyle: {
               backgroundColor: COLOR.primary,
@@ -79,6 +83,7 @@ function App(): JSX.Element {
         <Stack.Screen
           name="mot de passe oublie"
           options={{
+            headerShadowVisible: false,
             headerTitleAlign: 'center',
             headerStyle: {
               backgroundColor: COLOR.primary,
@@ -101,6 +106,7 @@ function App(): JSX.Element {
         <Stack.Screen
           name="deuxime etape"
           options={{
+            headerShadowVisible: false,
             headerTitleAlign: 'center',
             headerStyle: {
               backgroundColor: COLOR.primary,
@@ -123,6 +129,7 @@ function App(): JSX.Element {
         <Stack.Screen
           name="notificationpage"
           options={{
+            headerShadowVisible: false,
             headerTitleAlign: 'center',
             headerStyle: {
               backgroundColor: '#fff',
@@ -140,6 +147,13 @@ function App(): JSX.Element {
             },
           }}
           component={NotificationPage}
+        />
+        <Stack.Screen
+          name="mytabs"
+          options={{
+            headerShown: false,
+          }}
+          component={MyTabs}
         />
       </Stack.Navigator>
     </NavigationContainer>

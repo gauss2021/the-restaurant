@@ -18,7 +18,7 @@ function NotificationPage(): JSX.Element {
       <View style={{backgroundColor: '#fff', height: '100%'}}>
         <View
           style={{
-            height: 40,
+            height: 20,
             width: '100%',
             backgroundColor: '#fff',
           }}></View>
