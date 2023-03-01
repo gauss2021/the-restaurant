@@ -9,8 +9,9 @@ import {COLOR} from '../config';
 import Login from './Login';
 import SearchPage from './SearchPage';
 import Store from './Store';
-import {View} from 'react-native';
+import {TextInput, View} from 'react-native';
 import PanierIcon from '../components/PanierIcon';
+import SearchBarre from '../components/SearchBarre';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,6 +21,8 @@ const MyTabs = () => {
       initialRouteName="store"
       screenOptions={{
         tabBarShowLabel: false,
+        headerLeftContainerStyle: {padding: 15},
+        headerRightContainerStyle: {padding: 15},
         tabBarActiveBackgroundColor: COLOR.secondary,
         tabBarInactiveBackgroundColor: COLOR.primary,
         tabBarStyle: {
@@ -35,8 +38,6 @@ const MyTabs = () => {
         name="store"
         component={Store}
         options={{
-          headerLeftContainerStyle: {padding: 15},
-          headerRightContainerStyle: {padding: 15},
           headerShadowVisible: false,
           headerTitleAlign: 'center',
           headerTitleStyle: {
@@ -73,8 +74,12 @@ const MyTabs = () => {
         name="recherche"
         component={SearchPage}
         options={{
+          headerShadowVisible: false,
           tabBarIcon: ({focused}) => {
             return <SearchIcon />;
+          },
+          headerTitle() {
+            return <SearchBarre />;
           },
         }}
       />

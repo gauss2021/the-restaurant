@@ -5,7 +5,7 @@
  * @format
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
@@ -37,6 +37,8 @@ import RegisterPhone from './screens/RegisterPhone';
 import NotificationPage from './screens/NotificationPage';
 import MyTabs from './screens/TabBarView';
 import ProfilImage from './components/ProfilImage';
+import SplashScreen from './screens/SplashScreen';
+import SearchPage from './screens/SearchPage';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -47,19 +49,20 @@ const Stack = createNativeStackNavigator();
 function App(): JSX.Element {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="mytabs">
+      <Stack.Navigator initialRouteName="splashscreen">
         <Stack.Screen
-          name="Se connecter"
+          name="login"
           options={{
             headerShadowVisible: false,
             headerTitleAlign: 'center',
-            headerStyle: {
-              backgroundColor: COLOR.primary,
-            },
+            title: 'Se connecter',
             headerTintColor: '#fff',
             headerTitleStyle: {
               fontWeight: 'normal',
               fontSize: TEXT.subtitle,
+            },
+            headerStyle: {
+              backgroundColor: COLOR.primary,
             },
           }}
           component={Login}
@@ -154,6 +157,13 @@ function App(): JSX.Element {
             headerShown: false,
           }}
           component={MyTabs}
+        />
+        <Stack.Screen
+          name="splashscreen"
+          options={{
+            headerShown: false,
+          }}
+          children={SplashScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

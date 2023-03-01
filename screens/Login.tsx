@@ -94,7 +94,9 @@ function Login({navigation}: {navigation: any}): JSX.Element {
             text="Se connecter"
             backgroundcolor={COLOR.primary}
             textcolor="#fff"
-            onpress={() => {}}
+            onpress={() => {
+              navigation.navigate('mytabs');
+            }}
             width="100%"
           />
         </View>

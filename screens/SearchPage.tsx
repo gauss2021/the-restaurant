@@ -11,7 +11,7 @@ import Visibility from '../components/Visibility';
 import {COLOR, TEXT} from '../config';
 
 function SearchPage(): JSX.Element {
-  return <View style={{backgroundColor: COLOR.primary, height: '100%'}}></View>;
+  return <View style={{backgroundColor: '#fff', height: '100%'}}></View>;
 }
 
 export default SearchPage;
